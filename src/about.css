@@ -1,0 +1,39 @@
+.about_container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}   
+.about_img{
+    background-image: url("./assets/images/about_img.jpg");
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+}
+.about-text_wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20rem;
+    gap:2rem;
+}
+.about_heading{
+    color: #000000;
+    /* text-align: center; */
+    font-family: Inter;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 3rem;
+}
+.about_text{
+    color: #000000;
+    font-family: Inter;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.about_explore{
+    
+}
