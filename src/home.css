@@ -43,4 +43,15 @@
     margin-top: 6rem;
     height: 6.5rem;
     border: none;
+    transition:transform 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content :center;
+   
+    
+}
+.home_button:hover{
+    transform: translate(0px,-4px);
 }

@@ -4,6 +4,7 @@ import Home from './Home'
 import About from './About'
 import './App.css'
 import Navbar from './components/Navbar'
+import Vans from './components/Vans'
 
 function App() {
 
@@ -13,6 +14,8 @@ function App() {
       <Routes>
         <Route path='/' Component={Home}/>
         <Route path='/about' Component={About}/>
+        <Route path='/about' Component={About}/>
+        <Route path='/vans' Component={Vans}/>
       </Routes>
     </BrowserRouter>
   )
