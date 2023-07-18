@@ -1,8 +1,10 @@
 .home_container{
     height: 100%;
-    background-image: url("./assets/images/home_bg.png") ;
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url("./assets/images/home_bg.jpg") ;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     
 
 }
@@ -10,34 +12,35 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0 20rem;
+    margin: 0 28rem;
     gap:2rem;
 }
 .home_heading{
     color: #FFF;
     /* text-align: center; */
     font-family: Inter;
-    font-size: 5rem;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 700;
     margin-top: 10rem;
 }
 .home_para{
-    color: #FFF;
+    color: #d7d7d7;
     font-family: Inter;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 500;
     /* text-align: center; */
 }
 
 .home_button{
-    border-radius: 10px;
-    background: #FF8C38;
+    border-radius: 15px;
+    background: #dc3016;
     color: #FFF;
     text-align: center;
     font-family: Inter;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-top: 6rem;
     height: 6.5rem;
+    border: none;
 }

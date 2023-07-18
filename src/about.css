@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    font-family: inter;
 
 }   
 .about_img{
@@ -15,14 +16,14 @@
 .about-text_wrapper{
     display: flex;
     flex-direction: column;
-    margin: 0 20rem;
+    margin: 0 28rem;
     gap:2rem;
 }
 .about_heading{
     color: #000000;
     /* text-align: center; */
     font-family: Inter;
-    font-size: 5rem;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 700;
     margin-top: 3rem;
@@ -30,10 +31,37 @@
 .about_text{
     color: #000000;
     font-family: Inter;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
 .about_explore{
+
+    border-radius: 10px;
+    background-color: #FFCC8D;
+    margin-top: 4rem;
+    margin-bottom:4rem ; 
+}
+
+.about_explore_wrapper{
+    padding: 3rem 5rem; 
+}
+.about_explore_heading{
+    color: #161616;
+    font-family: Inter;
+    font-size: 3rem;
+    font-weight: 700;
     
+    
+
+}
+.about_explore_btn{
+    color: white;
+    font-family: Inter;
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: black;
+    padding: 1.5rem 3rem;
+    margin-top: 2.5rem;
+    border-radius: 15px;
 }

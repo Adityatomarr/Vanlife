@@ -10,9 +10,13 @@ export default function About(){
                     (Hitch costs extra 😉). <br/><br/>Our team is full of vanlife enthusiasts who know firsthand the magic of touring the world on 4 wheels.
                 </p>
                 <div className="about_explore">
-                    <h2 className="about_explore_heading">Your destination is waiting.<br/>Your van is ready.</h2>
+                    <div className="about_explore_wrapper">
+                        <h2 className="about_explore_heading">Your destination is waiting.<br/>Your van is ready.</h2>
+                        <button className="about_explore_btn">Explore our vans</button>
+                    </div>
+                   
                 </div>
-                <button className="about_explore_btn">Explore our vans</button>
+                
             </div>
         </div>
     )
