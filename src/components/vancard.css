@@ -1,0 +1,37 @@
+.van-card{
+    margin-top:2rem;
+}
+.van-card_img{
+    max-width: 550px;
+    border-radius:20px ;
+    max-height: 540px;
+}
+.van-card_details{
+    display:flex;
+    color: black;
+    font-family: Inter;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+.van-card_details>span{
+    margin-right: auto;
+}
+.van-card_type{
+    color: white;
+    font-family: Inter;
+    font-size: 2rem;
+    font-weight: 500;
+    background-color: #115E59;
+    padding: 0.5rem ;
+    /* margin-top: 1rem; */
+    border-radius: 5px;
+    width: 30%;
+    text-align: center;
+}
+.van-card>p{
+    text-align: right;
+    margin-right: 1rem;
+    font-family: inter;
+    font-size: 1.5rem;
+}

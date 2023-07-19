@@ -5,6 +5,7 @@ import About from './About'
 import './App.css'
 import Navbar from './components/Navbar'
 import Vans from './components/Vans'
+import "./server"
 
 function App() {
 
