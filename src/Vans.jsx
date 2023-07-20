@@ -1,5 +1,5 @@
 import React from "react";
-import VanCard from "./VanCard";
+import VanCard from "./components/VanCard";
 import "./vans.css"
 
 export default function Vans(){

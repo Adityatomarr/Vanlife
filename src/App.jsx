@@ -2,9 +2,10 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
-import './App.css'
 import Navbar from './components/Navbar'
-import Vans from './components/Vans'
+import Vans from './Vans'
+import VanDetail from './VanDetail'
+import './App.css'
 import "./server"
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/about' Component={About}/>
         <Route path='/about' Component={About}/>
         <Route path='/vans' Component={Vans}/>
+        <Route path='/vans/:id' Component={VanDetail}/>
       </Routes>
     </BrowserRouter>
   )
