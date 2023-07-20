@@ -54,14 +54,3 @@
 .luxury{
     background-color:black ;
 }
-.van-card_type:hover {
-    color: #FFEAD0;
-}
-
-.van-card_type:focus {
-    outline: none;
-}
-
-.van-card_type.selected {
-    color: #FFEAD0;
-}

@@ -7,6 +7,7 @@ export default function Navbar(){
         <nav>
             <Link className= "nav-logo" to= "/">#VANLIFE</Link>
             <div className='nav-links'> 
+                <Link to= '/host'>Host</Link>
                 <Link to= '/about'>About</Link>
                 <Link to= '/vans'>Vans</Link>
             </div>

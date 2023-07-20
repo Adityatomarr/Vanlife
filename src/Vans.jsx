@@ -11,12 +11,13 @@ export default function Vans(){
     },[])
     const vansArray= vans.map((van)=> {
         return(<VanCard id={van.id} 
+            key={van.id}
             name={van.name} 
             price={van.price} 
             description={van.description} 
             image={van.imageUrl}
             type={van.type} /> )})
-    console.log(vans)
+   
     return (
         <div className="vans_container">
             <h1>Explore our van options</h1>
