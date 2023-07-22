@@ -16,11 +16,13 @@ export default function VanDetail(){
             <Link to='/vans' className="backToVans"><span>← </span>Back to all Vans</Link>
             {vanDetail ? <div className="van-details-container">
                 <img className="van-details_image"src={vanDetail.imageUrl} alt={`${vanDetail.name}-image`} />
-                <div className="van-details_type">{vanDetail.type}</div>
-                <h1 className="van-details_name">{vanDetail.name}</h1>
-                <p className="van-details_price"><span>${vanDetail.price}</span>/day</p>
-                <p className="van-details_description">{vanDetail.description}</p>
-                <button className="van-details_button">Rent this van</button>
+                <div className="van-details-details">
+                    <h1 className="van-details_name">{vanDetail.name}</h1>
+                    <div className="van-details_type">{vanDetail.type}</div>
+                    <p className="van-details_price"><span>${vanDetail.price}</span>/day</p>
+                    <p className="van-details_description">{vanDetail.description}</p>
+                    <button className="van-details_button">Rent this van</button>
+                </div>
 
             </div> : <h1>Loading...</h1>}
         </div>

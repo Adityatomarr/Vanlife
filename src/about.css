@@ -3,6 +3,8 @@
     flex-direction: column;
     gap: 2rem;
     font-family: inter;
+    align-items: center;
+ 
 
 }   
 .about_img{
@@ -11,13 +13,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    width: 100%;
 
 }
 .about-text_wrapper{
     display: flex;
     flex-direction: column;
-    margin: 0 28rem;
+    max-width: 50rem;
     gap:2rem;
+    
 }
 .about_heading{
     color: #000000;

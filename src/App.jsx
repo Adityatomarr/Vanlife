@@ -8,6 +8,10 @@ import './App.css'
 import "./server"
 import Layout from './components/Layout'
 import Dashboard from './host/Dashboard'
+import HostLayout from './components/HostLayout'
+import Income from './host/Income'
+import Reviews from './host/Reviews'
+
 
 
 
@@ -16,12 +20,16 @@ function App() {
   return(
     <BrowserRouter>
       <Routes>
-        <Route Component={Layout}>
-          <Route path='/' Component={Home}/>
-          <Route path='/host' Component={Dashboard}/>
-          <Route path='/about' Component={About}/>
-          <Route path='/vans' Component={Vans}/>
-          <Route path='/vans/:id' Component={VanDetail}/>
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<Home/>}/>
+          <Route path='about' element={<About/>}/>
+          <Route path='vans' element={<Vans/>}/>
+          <Route path='vans/:id' element={<VanDetail/>}/>
+          <Route path='host' element={<HostLayout/>}>
+            <Route index element={<Dashboard/>}/>
+            <Route path ='income' element={<Income/>}/>              
+            <Route path ='reviews' element={<Reviews/>}/>              
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

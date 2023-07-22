@@ -1,7 +1,8 @@
 .van-details{
     font-family: inter;
-    padding: 0 35rem;
+    
     color: black;
+    padding: 0 4.5rem;
 }
 .backToVans{
     color: rgb(36, 36, 36);
@@ -11,15 +12,18 @@
 }
 
 .van-details_image{
-    width: 100%;
+    height: 80vh;
+    width: 50vw;
     border-radius: 15px;
 
 }
+
 .van-details-container{
     display:flex;
-    flex-direction: column;
-    gap:2rem;
+    gap:4rem;
     margin-top: 2rem;
+    margin-bottom: 5rem;
+    /* align-items: ; */
 }
 .van-details_type{
     color: white;
@@ -28,7 +32,7 @@
     /* margin-left: 0.5rem ; */
     background-color: #E17654;
     padding: 0.5rem ;
-    /* margin-top: 1rem; */
+    margin-top: 2rem;
     border-radius: 5px;
     width: 30%;
     text-align: center;
@@ -36,6 +40,7 @@
 .van-details_price{
     font-size: 2.5rem;
     font-weight: 400;
+    margin-top: 2rem;
 }
 .van-details_price>span{
     font-size: 2.5rem;
@@ -47,22 +52,27 @@
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 2.5rem;
+    margin-top: 2rem;
 }
 .van-details_button{
+    
     border-radius: 5px;
     background: #E17654;
     color: #FFF;
-    text-align: center;
-    font-family: Inter;
+    /* text-align: center; */
     font-size: 2.5rem;
     font-weight: 600;
-    /* margin-top: 3rem; */
-    height: 4rem;
+    margin-top: 5rem;
+    /* height: 4rem; */
     border: none;
-    transition:transform 0.3s ease-in-out;
     cursor: pointer;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content :center;
+    padding: 1rem 5rem;
+    
+    
 }
+
+    .van-details-details{
+        display: flex;
+        flex-direction: column;
+    }
