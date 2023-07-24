@@ -10,7 +10,7 @@ export default function VanDetail(){
             .then(res => res.json())
             .then(data => setVanDetail(data.vans))
     },[params.id])
-
+    console.log(vanDetail)
     return(
         <div className="van-details">
             <Link to='/vans' className="backToVans"><span>← </span>Back to all Vans</Link>
