@@ -13,7 +13,7 @@ export default function VanDetail(){
     console.log(vanDetail)
     return(
         <div className="van-details">
-            <Link to='/vans' className="backToVans"><span>← </span>Back to all Vans</Link>
+            <Link to='..' relative="path" className="backToVans">&larr;<span>Back to all Vans </span></Link>
             {vanDetail ? <div className="van-details-container">
                 <img className="van-details_image"src={vanDetail.imageUrl} alt={`${vanDetail.name}-image`} />
                 <div className="van-details-details">

@@ -1,5 +1,6 @@
 import {React,useState,useEffect} from "react";
-import {useParams,Outlet,Link} from "react-router-dom";
+import {useParams,Outlet,Link,NavLink,} from "react-router-dom";
+import "./hostVanDetailsLayout.css"
  
 export default function HostVansDetailsLayout(){
     const [van,setVan] = useState([])
@@ -10,10 +11,14 @@ export default function HostVansDetailsLayout(){
             .then(res => res.json())
             .then(data => setVan(data.vans[0]))
     },[params.id])
-    console.log(van)
+
+    const activeStyle={
+        color:"black",
+        textDecoration: "underline"
+    }
     return(
         <div className="host-van-details-layout">
-            <Link to='/host/vans' className="backToHostVans"><span>← </span>Back to all Vans</Link>
+            <Link to='..' relative="path" className="backToHostVans">&larr;<span>Back to all Vans</span></Link>
             <div className="host-van-details-layout-container">
                 <div className="host-van-details-layout-details">
                     <div className="host-van-details-layout-details-header">
@@ -24,12 +29,14 @@ export default function HostVansDetailsLayout(){
                             <p className="host-van-details-price"><span>${van.price}</span>/day</p>
                         </div>
                     </div>
-                    <nav> 
-                        <Link to={`/host/vans/${van.id}`}>Details</Link>
-                        <Link to={`/host/vans/${van.id}/pricing`}>Pricing</Link>
-                        <Link to={`/host/vans/${van.id}/photos`}>Photos</Link>
-                    </nav>
-                    <Outlet/>
+                    <div className="host-van-details-layout-details-body">
+                        <nav> 
+                            <NavLink style={({isActive})=> isActive ? activeStyle: null } to='.' end>Details</NavLink>
+                            <NavLink style={({isActive})=> isActive ? activeStyle: null } to='pricing'>Pricing</NavLink> 
+                            <NavLink style={({isActive})=> isActive ? activeStyle: null } to='photos'>Photos</NavLink>
+                        </nav>
+                        <Outlet context={{van}}/>
+                    </div>
 
                 </div>
             </div>

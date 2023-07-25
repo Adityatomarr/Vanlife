@@ -1,0 +1,75 @@
+.host-van-details-layout{
+    padding: 1rem 4.5rem;
+    
+}
+.backToHostVans{
+    color: rgb(36, 36, 36);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+.backToHostVans>span{
+    text-decoration: underline;
+}
+.host-van-details-layout-container{
+    padding:2rem;
+    background-color:white;
+    border-radius: 10px;
+    margin-top: 2rem;
+
+}
+.host-van-details-layout-details{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap:1rem;
+}
+.host-van-details-layout-details-header{
+    display: flex;
+    gap:1rem;
+    /* align-items: center; */
+    
+}
+.host-van-details-layout-details-header>img{
+    max-width: 50%;
+    border-radius: 10px;
+}
+.host-van-details_type{
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    background-color: #E17654;
+    padding: 0.5rem ;
+    margin-top: 4rem;
+    border-radius: 5px;
+    width: 30%;
+    text-align: center;
+}
+.host-van-details-text>h1{
+    font-size: 3.5rem;
+    margin: 2rem 0;
+}
+.host-van-details-text>p{
+    font-size: 3rem;
+}
+.host-van-details-text>p>span{
+    font-weight: 700;
+}
+.host-van-details-layout-details-body>nav{
+    display: flex;
+    gap: 3rem;
+    margin-bottom:2rem ;
+   
+}
+.host-van-details-layout-details-body>nav>a{
+    text-decoration: none;
+    color: #4D4D4D;
+    font-family: Inter;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+
+.host-van-details-layout-details-body>nav> a:hover{
+    color:black;
+    text-decoration: underline;
+}
