@@ -1,7 +1,7 @@
 .home_container{
     min-height: 100vh;
 
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url("./assets/images/home_bg.jpg") ;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url("./assets/images/home_bg2.jpg") ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -36,7 +36,7 @@
 
 .home_button{
     border-radius: 15px;
-    background: #dc3016;
+    background: #FF8C38;
     color: #FFF;
     text-align: center;
     font-family: Inter;
