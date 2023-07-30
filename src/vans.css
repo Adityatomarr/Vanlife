@@ -12,6 +12,7 @@
     display: flex;
     gap:3rem;
     margin-top: 2rem;
+}
    
 .van-type-filter{
     font-family: Inter;
@@ -37,21 +38,19 @@
     padding: 0.5rem ;
     border: none;
     background-color: transparent;
-    text-decoration: underline;
-    
-    
+    text-decoration: underline; 
 }
 
 
-.van-type-filter.simple:hover{
+.van-type-filter.simple.selected, .van-type-filter.simple:hover{
     color: white;
     background-color:#E17654
 }
-.van-type-filter.rugged:hover{
+.van-type-filter.rugged.selected, .van-type-filter.rugged:hover{
     color: white;
     background-color:#115E59
 }
-.van-type-filter.luxury:hover{
+.van-type-filter.luxury.selected, .van-type-filter.luxury:hover{
     color: white;
     background-color:#000000
 }
