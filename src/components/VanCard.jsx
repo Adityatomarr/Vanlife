@@ -7,7 +7,7 @@ export default function VanCard(props){
     
     return(
         <div className="van-card" >
-            <Link to={props.id} state={{search: `?${props.search}`}}>
+            <Link to={props.id} state={{search: `?${props.search}` ,type: props.typeFilter}}>
                 <img src={props.image} className="van-card_img"></img>
                 
                 <h2 className="van-card_details"><span>{props.name}</span> ${props.price}</h2>

@@ -16,6 +16,7 @@ import HostVansDetailsLayout from './host/HostVansDetailsLayout'
 import HostVanDetails from './host/HostVanDetails'
 import HostVanPricing from './host/HostVanPricing'
 import HostVanPhotos from './host/HostVanPhotos'
+import Error from './components/Error'
 
 
 
@@ -42,6 +43,7 @@ function App() {
               <Route path='photos' element={<HostVanPhotos/>}/>
             </Route>      
           </Route>
+          <Route path='*' element={<Error/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -16,7 +16,7 @@ export default function Vans(){
     const typeFilter = searchParams.get("type")
 
     const displayedVans = typeFilter
-    ? vans.filter(van => typeFilter===van.type)
+    ? vans.filter(van => van.type===typeFilter  )
     : vans
 
     const vansArray= displayedVans.map((van)=> {
@@ -27,7 +27,8 @@ export default function Vans(){
             description={van.description} 
             image={van.imageUrl}
             type={van.type}
-            search= {searchParams.toString()} /> )})
+            search= {searchParams.toString()} 
+            typeFilter= {typeFilter}/> )})
    
     return (
         <div className="vans_container">
