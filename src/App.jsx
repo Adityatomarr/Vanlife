@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { RouterProvider,createBrowserRouter,createRoutesFromElements, Route,  } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
 import Vans from './Vans'
@@ -18,16 +18,9 @@ import HostVanPricing from './host/HostVanPricing'
 import HostVanPhotos from './host/HostVanPhotos'
 import Error from './components/Error'
 
-
-
-
-
 function App() {
-
-  return(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout/>}>
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path='about' element={<About/>}/>
           <Route path='vans' element={<Vans/>}/>
@@ -45,8 +38,10 @@ function App() {
           </Route>
           <Route path='*' element={<Error/>}/>
         </Route>
-      </Routes>
-    </BrowserRouter>
+  ))
+
+  return(
+    <RouterProvider router={router}/>
   )
 }
 
