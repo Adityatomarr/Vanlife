@@ -2,7 +2,7 @@ import React from 'react'
 import { RouterProvider,createBrowserRouter,createRoutesFromElements, Route,  } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
-import Vans from './Vans'
+import Vans,{loader as vansLoader} from './Vans'
 import VanDetail from './VanDetail'
 import './App.css'
 import "./server"
@@ -23,8 +23,8 @@ function App() {
     <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path='about' element={<About/>}/>
-          <Route path='vans' element={<Vans/>}/>
-          <Route path='vans/:id' element={<VanDetail/>}/>
+          <Route path='vans' element={<Vans /> } loader={vansLoader}/>
+          <Route path='vans/:id' element={<VanDetail/>}/>j
           <Route path='host' element={<HostLayout/>}>
             <Route index element={<Dashboard/>}/>
             <Route path ='income' element={<Income/>}/>              

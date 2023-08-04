@@ -1,23 +1,15 @@
 import React from "react";
 import VanCard from "./components/VanCard";
-import {useSearchParams } from "react-router-dom";
+import {useSearchParams, useLoaderData } from "react-router-dom";
 import "./vans.css"
 import { getVans } from "./api";
 
+export function loader(){
+    return getVans()
+}
 export default function Vans(){
-    const [vans,setVans] = React.useState([])
-    const [loading ,setLoading] = React.useState(false)
-    React.useEffect(()=>{
-        async function loadVans(){
-            setLoading(true)
-            const data = await getVans()
-            setVans(data)
-            setLoading(false)
-        }
-        loadVans()
-
-    },[])
-
+    
+    const vans= useLoaderData()
     const [searchParams, setSearchParams]= useSearchParams()
     const typeFilter = searchParams.get("type")
 
@@ -45,12 +37,11 @@ export default function Vans(){
                 <button className= {`van-type-filter luxury ${typeFilter==="luxury" ? "selected": ""} `} onClick={()=> setSearchParams({type: "luxury"})}>Luxury</button>
                 {typeFilter && <button className= "van-type-clear-filter" onClick={()=> setSearchParams({})}>Clear filters</button>}
             </div>
-            {!loading?(
-                <div className="vans_list">
-                    {vansArray}
-                </div>
-            )
-            :(<h1>Loading...</h1>)}
+            
+            <div className="vans_list">
+                {vansArray}
+            </div>
+            
             
         </div>
     )
