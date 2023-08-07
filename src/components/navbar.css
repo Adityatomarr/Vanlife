@@ -14,18 +14,21 @@ nav{
 } 
 .nav-links{
     display: flex;
-    gap: 1.5rem;
+    gap: 3rem;
     align-items: center;
     padding: 1.5rem;
     margin-right:3rem ;
     
 }
 .nav-links> a {
+    display: flex;
     text-decoration: none;
     color: #4D4D4D;
     font-family: Inter;
     font-size: 2rem;
     font-weight: 600;
+    align-items: center;
+
 }
 
 .nav-links> a:hover{

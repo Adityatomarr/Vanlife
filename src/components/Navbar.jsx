@@ -15,6 +15,7 @@ export default function Navbar(){
                 <NavLink style={({isActive})=> isActive? activeStyle: null} to= '/host'>Host</NavLink>
                 <NavLink style={({isActive})=> isActive? activeStyle: null} to= '/about'>About</NavLink>
                 <NavLink style={({isActive})=> isActive? activeStyle: null} to= '/vans'>Vans</NavLink>
+                <Link to='login'><img src="src/assets/images/avatar-icon.png" height="36rem" /></Link>
             </div>
     </nav>
     )
