@@ -2,9 +2,14 @@ import {React,useState, useEffect} from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import "./hostvans.css"
 import { getHostVans } from "../api";
+import { requireAuth } from "../util";
 
-export function loader(){
-    return getHostVans()
+export async function loader(){
+    const res = await requireAuth()
+    if(res){
+        return res
+    }
+    return getHostVans()  
 }
 export default function HostVans(){
     const vans = useLoaderData()

@@ -18,6 +18,8 @@ import HostVanPricing from './host/HostVanPricing'
 import HostVanPhotos from './host/HostVanPhotos'
 import Error from './components/Error'
 import Login from './Login'
+import { requireAuth } from './util'
+import { redirect } from 'react-router-dom'
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
@@ -28,14 +30,14 @@ function App() {
           <Route path='vans' element={<Vans /> } errorElement={<Error/>} loader={vansLoader}/>
           <Route path='vans/:id' element={<VanDetail/>} loader={vanDetailLoader}/>
           <Route path='host' element={<HostLayout/>}>
-            <Route index element={<Dashboard/>}/>
-            <Route path ='income' element={<Income/>}/>              
-            <Route path ='reviews' element={<Reviews/>}/>              
+            <Route index element={<Dashboard/>}  loader={async ()=> await requireAuth()}/>
+            <Route path ='income' element={<Income/>}  loader={async ()=> await requireAuth()} />              
+            <Route path ='reviews' element={<Reviews/>}  loader={async ()=> await requireAuth()}/>              
             <Route path ='vans' element={<HostVans/>} loader={hostVansLoader}/>
             <Route path='vans/:id' element={<HostVansDetailsLayout/>} loader={hostVansDetailsLayoutLoader}>
-              <Route index element={<HostVanDetails/>}/>
-              <Route path='pricing' element={<HostVanPricing/>}/>
-              <Route path='photos' element={<HostVanPhotos/>}/>
+              <Route index element={<HostVanDetails/>} loader={async ()=> await requireAuth()}/>
+              <Route path='pricing' element={<HostVanPricing/>} loader={async ()=> await requireAuth()}/>
+              <Route path='photos' element={<HostVanPhotos/>} loader={async ()=> await requireAuth()}/>
             </Route>      
           </Route>
           <Route path='*' element={<Error/>}/>

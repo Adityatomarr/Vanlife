@@ -2,8 +2,13 @@ import {React,useState,useEffect} from "react";
 import {useParams,Outlet,Link,NavLink, useLoaderData,} from "react-router-dom";
 import "./hostVanDetailsLayout.css"
 import { getHostVans } from "../api";
+import { requireAuth } from "../util";
 
-export function loader({params}){
+export async function loader({params}){
+    const res = await requireAuth()
+    if(res){
+        return res
+    }
     return getHostVans(params.id);
 }
  
