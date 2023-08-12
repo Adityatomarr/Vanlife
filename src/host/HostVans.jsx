@@ -1,15 +1,19 @@
 import {React,useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import "./hostvans.css"
+import { getHostVans } from "../api";
 
+export function loader(){
+    return getHostVans()
+}
 export default function HostVans(){
-    const [vans, setVans] = useState([])
+    const vans = useLoaderData()
 
-    useEffect(() =>{
-        fetch("/api/host/vans")
-            .then(res => res.json())
-            .then(data => setVans(data.vans))
-    },[])
+    // useEffect(() =>{
+    //     fetch("/api/host/vans")
+    //         .then(res => res.json())
+    //         .then(data => setVans(data.vans))
+    // },[])
 
     const vanElement=vans.map(van=> {
         return(
@@ -20,9 +24,7 @@ export default function HostVans(){
                         <h2>{van.name}</h2>
                         <p>${van.price}/day</p>
                     </div>
-
                 </Link>
-
             </div>
         )
     })

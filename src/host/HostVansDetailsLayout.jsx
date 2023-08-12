@@ -1,16 +1,21 @@
 import {React,useState,useEffect} from "react";
-import {useParams,Outlet,Link,NavLink,} from "react-router-dom";
+import {useParams,Outlet,Link,NavLink, useLoaderData,} from "react-router-dom";
 import "./hostVanDetailsLayout.css"
+import { getHostVans } from "../api";
+
+export function loader({params}){
+    return getHostVans(params.id);
+}
  
 export default function HostVansDetailsLayout(){
-    const [van,setVan] = useState([])
-    const params = useParams()
+    const van = useLoaderData();
+    // const params = useParams()
 
-    useEffect(()=>{
-        fetch(`/api/host/vans/${params.id}`)
-            .then(res => res.json())
-            .then(data => setVan(data.vans[0]))
-    },[params.id])
+    // useEffect(()=>{
+    //     fetch(`/api/host/vans/${params.id}`)
+    //         .then(res => res.json())
+    //         .then(data => setVan(data.vans[0]))
+    // },[params.id])
 
     const activeStyle={
         color:"black",

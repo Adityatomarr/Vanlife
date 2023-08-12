@@ -2,9 +2,7 @@ import React from "react";
 import "./vancard.css"
 import { Link, useSearchParams } from "react-router-dom";
 
-export default function VanCard(props){
-    console.log(props.filter)
-    
+export default function VanCard(props){   
     return(
         <div className="van-card" >
             <Link to={props.id} state={{search: `?${props.search}` ,type: props.typeFilter}}>
