@@ -1,26 +1,23 @@
-import {React,useState, useEffect} from "react";
-import { Link, useParams,useLocation } from "react-router-dom";
+import {React} from "react";
+import { Link, useParams,useLocation,  useLoaderData } from "react-router-dom";
 import "./vandetail.css";
+import { getVans } from "./api";
+
+export function loader({params}){
+    return getVans(params.id)
+}
 
 export default function VanDetail(){
-    const [vanDetail,setVanDetail]= useState(null)
-
+    const vanDetail = useLoaderData()
     const params = useParams()
     const location = useLocation()
     const search = location.state?.search || ""
     const vanType = location.state?.type || "all"
-    // console.log(location)
-
-    useEffect(()=>{
-        fetch(`/api/vans/${params.id}`)
-            .then(res => res.json())
-            .then(data => setVanDetail(data.vans))
-    },[params.id])
 
     return(
         <div className="van-details">
             <Link to={`..${search}`} relative="path" className="backToVans">&larr;<span>Back to {vanType} Vans</span></Link>
-            {vanDetail ? <div className="van-details-container">
+            <div className="van-details-container">
                 <img className="van-details_image"src={vanDetail.imageUrl} alt={`${vanDetail.name}-image`} />
                 <div className="van-details-details">
                     <h1 className="van-details_name">{vanDetail.name}</h1>
@@ -30,7 +27,7 @@ export default function VanDetail(){
                     <button className="van-details_button">Rent this van</button>
                 </div>
 
-            </div> : <h1>Loading...</h1>}
+            </div>
         </div>
     )
 
