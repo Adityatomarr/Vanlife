@@ -17,16 +17,16 @@ import HostVanDetails from './host/HostVanDetails'
 import HostVanPricing from './host/HostVanPricing'
 import HostVanPhotos from './host/HostVanPhotos'
 import Error from './components/Error'
-import Login from './Login'
+import Login,{loader as loginLoader} from './Login'
 import { requireAuth } from './util'
-import { redirect } from 'react-router-dom'
+
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path='about' element={<About/>}/>
-          <Route path ='login' element={<Login/>}/>
+          <Route path ='login' element={<Login/>} loader={loginLoader}/>
           <Route path='vans' element={<Vans /> } errorElement={<Error/>} loader={vansLoader}/>
           <Route path='vans/:id' element={<VanDetail/>} loader={vanDetailLoader}/>
           <Route path='host' element={<HostLayout/>}>

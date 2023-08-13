@@ -65,3 +65,8 @@
     width:60%;
     border-radius: 0 15px 15px 0;
 }
+.alert-message{
+    color: red;
+    margin-top: 2rem;
+    margin-bottom:-2rem;
+}
