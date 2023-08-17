@@ -9,6 +9,9 @@ export default function Navbar(){
         textDecoration: "underline",
         fontWeight :"800"
     }
+    function fakeLogOut() {
+        localStorage.removeItem("loggedin")
+    }
     return(
         <nav>
             <Link className= "nav-logo" to= "/">#VANLIFE</Link>
@@ -17,6 +20,7 @@ export default function Navbar(){
                 <NavLink style={({isActive})=> isActive? activeStyle: null} to= '/about'>About</NavLink>
                 <NavLink style={({isActive})=> isActive? activeStyle: null} to= '/vans'>Vans</NavLink>
                 <Link to='login'><img src={avatar} height="36rem" /></Link>
+                <button onClick={fakeLogOut}>X</button>
             </div>
     </nav>
     )
