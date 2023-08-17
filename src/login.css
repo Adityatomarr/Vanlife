@@ -49,6 +49,10 @@
     /* margin-top: 3rem; */
     
 }
+.login-form>form>button:disabled{
+    background-color: #aaaaaa;
+    cursor: not-allowed;
+}
 .login-form>form>p{
     font-size: 1.25rem;
     color:white;
