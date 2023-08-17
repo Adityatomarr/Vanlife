@@ -1,5 +1,5 @@
 import React ,{useState} from "react";
-import { Link,useLoaderData,Form, redirect,useActionData } from "react-router-dom";
+import { Link,useLoaderData,Form, redirect,useActionData, useNavigation } from "react-router-dom";
 import "./login.css"
 import { loginUser } from "./api";
 
@@ -26,11 +26,7 @@ export async function action({request}){
 export default function Login(){
     const message = useLoaderData()
     const errorMessage = useActionData()
-    
-    // function handleSubmit(e){
-    //     e.preventDefault();
-    //     // console.log(loginData)
-    // }
+    const navigation= useNavigation()
 
     return(
         <div className="login-container">        
@@ -53,7 +49,9 @@ export default function Login(){
                         // value={loginData.password}
                         // onChange={handleChange}
                     />
-                    <button>Log in</button>
+                    <button disabled = {navigation.state==="submitting"}>
+                        {navigation.state==="submitting" ? "Logging in...": "Log in"}
+                    </button>
                     <p >Don't have an account? <Link to='signup' >Create one now</Link></p>
                 </Form>
             </div>
