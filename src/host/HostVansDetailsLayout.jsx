@@ -4,8 +4,8 @@ import "./hostVanDetailsLayout.css"
 import { getHostVans } from "../api";
 import { requireAuth } from "../util";
 
-export async function loader({params}){
-    const res = await requireAuth()
+export async function loader({params,request}){
+    const res = await requireAuth(request)
     if(res){
         return res
     }

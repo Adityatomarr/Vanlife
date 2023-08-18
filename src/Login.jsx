@@ -8,13 +8,14 @@ export function loader({request}){
 }
 
 export async function action({request}){
+    const destinationPath = new URL(request.url).searchParams.get("redirectTo") || "/host"
     const formData = await request.formData()
     const email = formData.get("email")
     const password = formData.get("password")
     try{
         const data = await loginUser({email,password})
         localStorage.setItem("loggedin",true)
-        const response = redirect("/host")
+        const response = redirect(destinationPath)
         response.body = true
         return response
     }
