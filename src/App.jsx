@@ -7,7 +7,7 @@ import VanDetail, {loader as vanDetailLoader} from './VanDetail'
 import './App.css'
 import "./server"
 import Layout from './components/Layout'
-import Dashboard from './host/Dashboard'
+import Dashboard,{loader as dashboardLoader} from './host/Dashboard'
 import HostLayout from './components/HostLayout'
 import Income from './host/Income'
 import Reviews from './host/Reviews'
@@ -30,7 +30,7 @@ function App() {
           <Route path='vans' element={<Vans /> } errorElement={<Error/>} loader={vansLoader}/>
           <Route path='vans/:id' element={<VanDetail/>} loader={vanDetailLoader}/>
           <Route path='host' element={<HostLayout/>}>
-            <Route index element={<Dashboard/>}  loader={async ({request})=> await requireAuth(request)}/>
+            <Route index element={<Dashboard/>}  loader={dashboardLoader}/>
             <Route path ='income' element={<Income/>}  loader={async ({request})=> await requireAuth(request)} />              
             <Route path ='reviews' element={<Reviews/>}  loader={async ({request})=> await requireAuth(request)}/>              
             <Route path ='vans' element={<HostVans/>} loader={hostVansLoader}/>
